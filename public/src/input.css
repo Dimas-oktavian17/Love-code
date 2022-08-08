@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-bg {
+  background: rgb(238, 242, 255);
+  background: linear-gradient(
+    45deg,
+    rgba(238, 242, 255, 1) 39%,
+    rgba(238, 242, 255, 1) 45%,
+    rgba(238, 242, 255, 1) 100%
+  );
+}
+/* @layer components {
+  * {
+    @apply font-display;
+  }
+} */
+@layer components {
+  .container {
+    @apply max-w-5xl mx-auto py-8;
+  }
+}
+@layer components {
+  .active > div > p:nth-child(1) {
+    @apply rotate-45 origin-bottom-left bg-primary;
+  }
+}
+@layer components {
+  .active > div > p:nth-child(2) {
+    @apply scale-0;
+  }
+}
+@layer components {
+  .active > div > p:nth-child(3) {
+    @apply -rotate-[45deg] origin-top-left w-[30px] bg-primary;
+  }
+}
+@layer components {
+  .bayangan {
+    @apply shadow-lg shadow-primary2hover;
+  }
+}
+/* @layer components {
+  .bayangan {
+    @apply shadow-lg shadow-slate-800;
+  }
+} */
+
+/* .card-bg {
+  background: rgba(12, 27, 77, 0.1);
+  box-shadow: 0 8px px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+} */
