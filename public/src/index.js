@@ -9,7 +9,7 @@ onload = function () {
 
   let loaded = setInterval(() => {
     loading.classList.add("animate-bounce");
-    form_login.classList.remove("h-screen");
+    // form_login.classList.remove("h-screen");
   }, 1000);
 
   setTimeout(() => {
@@ -18,8 +18,8 @@ onload = function () {
     id.classList.remove("h-screen");
     form.classList.remove("invisible");
     form_login.classList.add("h-screen");
-    body.classList.remove("overflow-hidden");
-  }, 1500);
+    // body.classList.remove("overflow-hidden");
+  }, 5000);
 };
 // Fake data for localStroage Login
 
@@ -83,7 +83,7 @@ if (localStorage.getItem("username")) {
       let form = document.getElementById("form");
 
       let loaded = setInterval(() => {
-        loading.classList.add("animate-bounce");
+        loading.classList.remove("animate-bounce");
         form_login.classList.remove("h-screen");
       }, 0);
 
@@ -126,9 +126,9 @@ let fixed = document.querySelector(".fixed");
 
 window.addEventListener("scroll", function () {
   if (window.pageYOffset > 100) {
-    fixed.classList.add("bayangan");
+    fixed.classList.add("shadow-lg");
   } else {
-    fixed.classList.remove("bayangan");
+    fixed.classList.remove("shadow-lg");
   }
 });
 // Toggle dark mode

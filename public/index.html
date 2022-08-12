@@ -30,7 +30,7 @@
     <!-- <script src="../node_modules/animejs/lib/anime.min.js" type="text/javascript" defer></script> -->
 </head>
 
-<body class=" font-display box-border  overflow-hidden dark:bg-slate-800" id="body">
+<body class="font-display box-border overflow-hidden bg-Theme dark:bg-slate-800" id="body">
     <!-- Bounce for loading set interval -->
     <div class="flex justify-center items-center h-screen" id="bounce">
         <div class="relative ease-in-out w-32 h-32 bg-[#4A72FF] shadow-2xl shadow-blue-400 rounded-full" id="loading">
@@ -78,7 +78,7 @@
         <div class="container ">
             <nav class="border-gray-200 px-2 mb-10 invisible font-header " id="nav">
                 <div
-                    class="fixed container backdrop-blur-md w-[95%] z-[999]  mx-auto flex flex-wrap items-center justify-between lg:w-[98%]">
+                    class="fixed container backdrop-blur-md w-[95%] z-[999]  mx-auto flex flex-wrap items-center justify-between rounded-xl lg:w-[98%]">
                     <a href="#beranda" class="flex">
                         <svg class="h-10 mr-3" width="51" height="70" viewBox="0 0 51 70" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -106,8 +106,8 @@
                             </div>
                             <a href="#fitur">
                                 <button type="button"
-                                    class="font-header text-white font-semibold text-lg shadow-sm shadow-primary bg-primary hover:bg-blue-600 rounded-lg px-5 py-2.5 mr-2 mb-2 dark:text-dark dark:bg-slate-200 dark:hover:bg-slate-300  dark:shadow dark:shadow-slate-200">
-                                    Get Started
+                                    class="font-header text-white font-semibold text-lg shadow-sm shadow-primary bg-primary hover:bg-blue-600 rounded-lg px-5 py-2.5 mr-2 mb-2 dark:text-dark dark:bg-slate-200 dark:hover:bg-slate-300  dark:shadow-slate-200">
+                                    Logout
                                 </button>
                             </a>
                         </div>
@@ -169,6 +169,16 @@
                                     FAQ
                                 </a>
                             </li>
+                            <br>
+                            <li class="lg:hidden">
+                                <a href="#fitur">
+                                    <button type="button"
+                                        class="w-full font-header text-white font-semibold text-lg shadow-sm shadow-primary bg-primary hover:bg-blue-600 rounded-lg px-5 py-2.5 mr-2 mb-2 dark:text-dark dark:bg-slate-200 dark:hover:bg-slate-300  dark:shadow dark:shadow-slate-200">
+                                        Logout
+                                    </button>
+                                </a>
+                            </li>
+
                             <label for="default-toggle" class="inline-flex relative items-center cursor-pointer">
                                 <input type="checkbox" value="" id="default-toggle" class="sr-only peer">
                                 <div
@@ -223,7 +233,7 @@
                         </a>
                         <a href="#faq">
                             <button type="button"
-                                class="text-primary font-header text-lg font-semibold bg-primary2 hover:bg-primary2hover  rounded-lg px-5 py-2.5 mr-2 mb-2 dark:text-dark dark:bg-blue-50 dark:hover:bg-blue-100 ">
+                                class="text-primary font-header text-lg font-semibold bg-primary2 hover:bg-primary2hover  rounded-lg px-5 py-2.5 mr-2 mb-2 dark:text-primary2 dark:bg-btnDark  dark:hover:bg-slate-800 dark:hover:opacity-40 ">
                                 Learn More
                             </button>
                         </a>
@@ -238,11 +248,9 @@
             </div>
             <!-- Sponsor fake:v -->
             <div class="pt-[6.25rem]">
-                <span class="flex justify-center text-center text-[8px] font-main font-black text[#0C1B4D] pb-4">
-                    fake sponsor:v
-                </span>
+
                 <div
-                    class="flex flex-col justify-center items-center bg-[#ebefff] rounded-[15px] mx-8 gap-[10px] lg:p-[3.75rem] lg:order-2 lg:h-[9.688rem] lg:mx-16">
+                    class="flex flex-col justify-center items-center bg-primarySponsor rounded-[15px] mx-8 gap-[10px] lg:p-[3.75rem] lg:order-2 lg:h-[9.688rem] lg:mx-16 dark:bg-transparent dark:shadow-lg">
                     <div
                         class="flex flex-col justify-center items-center gap-10 py-8 lg:flex-row lg:w-[53.601rem] lg:h-9">
                         <figure>
@@ -263,21 +271,21 @@
             <!-- header Fitur -->
             <div class="flex flex-col justify-center items-center text-center py-[6.25rem]" id="fitur">
                 <div>
-                    <h1 class="font-header font-semibold text-sm tracking-widest text-secondary">
+                    <h1 class="font-header font-semibold text-sm tracking-widest text-secondary dark:text-white">
                         NGGAK HARUS SIH SEBENERNYA
                     </h1>
-                    <h2 class="font-main font-normal text-[28px] leading-[42px] text-secondary order-2 py-6">
+                    <h2
+                        class="font-main font-normal text-[28px] leading-[42px] text-secondary order-2 py-6 dark:text-primary2">
                         Kenapa Harus Pilih Dimas?
                     </h2>
                 </div>
-                <p class="font-header font-normal text-[16px] text-secondary3 px-8">
+                <p class="font-header font-normal text-[16px] text-secondary3 px-8 dark:text-primary2hover">
                     Sebenernya yang bagus itu sih laki” lain loh, mending pilih laki”
                     lain aja deh. Yaudah berikut ini adalah kelebihan Dimas.
                 </p>
             </div>
             <!-- Card section -->
             <div class="flex flex-col items-center gap-[30px] h-[21.875rem] lg:flex-row lg:h-[25rem]">
-
                 <div class="flex flex-col justify-center items-center flex-grow h-[21.875rem]">
                     <div>
                         <figure>
@@ -285,10 +293,11 @@
                         </figure>
                     </div>
                     <div class="text-center">
-                        <h1 class="font-main font-normal text-lg text-secondary py-6">
+                        <h1 class="font-main font-normal text-lg text-secondary py-6 dark:text-white">
                             Always support
                         </h1>
-                        <p class="font-header font-normal text-base order-4 text-secondary opacity-60 px-8">
+                        <p
+                            class="font-header font-normal text-base order-4 text-secondary opacity-60 px-8 dark:text-primary2hover">
                             Always support activities & couple's hobbies, especially if the
                             activities &hobbies are useful.
                         </p>
@@ -301,10 +310,11 @@
                         </figure>
                     </div>
                     <div class="text-center">
-                        <h1 class="font-main font-normal text-lg text-secondary py-6">
+                        <h1 class="font-main font-normal text-lg text-secondary py-6 dark:text-white">
                             Simple Chat & Deep Talk
                         </h1>
-                        <p class="font-header font-normal text-base order-4 text-secondary opacity-60 px-8">
+                        <p
+                            class="font-header font-normal text-base order-4 text-secondary opacity-60 px-8 dark:text-primary2hover">
                             Life is not easy, but life needs to be enjoyed. Chat Deep Talk
                             to open up thoughts, and chat jokes and simple chat to enjoy the
                             moment..
@@ -318,10 +328,11 @@
                         </figure>
                     </div>
                     <div class="text-center">
-                        <h1 class="font-main font-normal text-lg text-secondary py-6">
+                        <h1 class="font-main font-normal text-lg text-secondary py-6 dark:text-white">
                             Speak Freely
                         </h1>
-                        <p class="font-header font-normal text-base order-4 text-secondary opacity-60 px-8">
+                        <p
+                            class="font-header font-normal text-base order-4 text-secondary opacity-60 px-8 dark:text-primary2hover">
                             Outpouring of heart, telling stories, and everything about
                             yourself. Calm down I will listen and always be willing to give
                             you logical advice, if needed.
@@ -342,14 +353,17 @@
                 <div class="flex flex-col justify-start items-start w-full h-[44.125rem] lg:w-1/2">
                     <!-- text -->
                     <div class="pl-10 lg:pl-0">
-                        <h1 class="font-header font-semibold text-sm text-secondary tracking-widest">
+                        <h1
+                            class="font-header font-semibold text-sm text-secondary tracking-widest dark:text-primary2hover">
                             TEKNOLOGI YANG DIGUNAKAN
                         </h1>
-                        <h2 class="font-main font-normal text-[28px] text-secondary order-2 py-4">
+                        <h2 class="font-main font-normal text-[28px] text-secondary order-2 py-4 dark:text-white
+                        ">
                             Teknologi Yang Kami Gunakan Di Dalam Aplikasi Ini Akan Membuat
                             DHH Dan Jason Fried Pensiun! 😱
                         </h2>
-                        <p class="font-header font-normal text-base text-secondary opacity-60 order-4 lg:pr-4">
+                        <p
+                            class="font-header font-normal text-base text-secondary opacity-60 order-4 lg:pr-4 dark:text-primary2">
                             Lo bisa bayangin DHH sama Jason Fried aja jadi pensiun gegara
                             aplikasi ini, apalagi lo yang cuma user dan beban kami, gegara
                             lo pake dan daftar di aplikasi ini jadi kita harus bayar server
@@ -362,7 +376,7 @@
                         class="flex flex-col items-center gap-[25px] h-auto order-6 self-stretch pt-10 lg:flex-row lg:items-start">
                         <!-- icon -->
                         <div
-                            class="flex flex-row justify-center items-start p-[14px] gap-[10px] w-[60px] h-[60px] bg-bg-icon rounded-md lg:w-[100px] lg:justify-start">
+                            class="flex flex-row justify-center items-start p-[14px] gap-[10px] w-[60px] h-[60px] bg-bg-icon rounded-md lg:w-[100px] lg:justify-start dark:bg-slate-700">
                             <figure>
                                 <img src="./asset/icon/image 11.svg" alt="icon" />
                             </figure>
@@ -370,10 +384,11 @@
                         <!-- deskripsi -->
                         <div
                             class="flex flex-col items-center gap-[10px] h-auto order-1 flex-grow text-center lg:items-start lg:text-left">
-                            <h1 class="font-main font-medium text-lg text-black">
+                            <h1 class="font-main font-medium text-lg text-black dark:text-white">
                                 Kamu Adalah Beban Kami
                             </h1>
-                            <p class="font-header font-normal text-base text-[#0c1b4d] opacity-60 order-4">
+                            <p
+                                class="font-header font-normal text-base text-secondary opacity-60 order-4  dark:text-primary2">
                                 Semakin banyak kamu yang mendaftar di aplikasi ini, artinya
                                 semakin banyak data yang perlu disimpan, nah kan jadi perlu
                                 server gede tuh. Makanya kamu beban!
@@ -385,7 +400,7 @@
                         class="flex flex-col items-center gap-[25px] h-auto order-6 self-stretch pt-10 lg:flex-row lg:items-start">
                         <!-- icon -->
                         <div
-                            class="flex flex-row justify-center items-start p-[14px] gap-[10px] w-[60px] h-[60px] bg-bg-icon rounded-md lg:w-[100px] lg:justify-start">
+                            class="flex flex-row justify-center items-start p-[14px] gap-[10px] w-[60px] h-[60px] bg-bg-icon rounded-md lg:w-[100px] lg:justify-start dark:bg-slate-700">
                             <figure>
                                 <img src="./asset/icon/image 11 (1).svg" alt="icon" />
                             </figure>
@@ -393,10 +408,11 @@
                         <!-- deskripsi -->
                         <div
                             class="flex flex-col items-center gap-[10px] h-auto order-1 flex-grow text-center lg:items-start lg:text-left">
-                            <h1 class="font-main font-medium text-lg text-black">
+                            <h1 class="font-main font-medium text-lg text-black dark:text-white">
                                 Males Buat Ngembangin
                             </h1>
-                            <p class="font-header font-normal text-base text-[#0c1b4d] opacity-60 order-4 lg:pr-8">
+                            <p
+                                class="font-header font-normal text-base text-secondary opacity-60 order-4 lg:pr-8  dark:text-primary2">
                                 Lo bakal nemu bug, entah pesan yang mau dikirim gak bisa
                                 dikirim padahal lo belom pencet tombol enter atau masalah
                                 lainnya. Nah soal itu kita males buat benerin.
@@ -408,7 +424,7 @@
                         class="flex flex-col items-center gap-[25px] h-auto order-6 self-stretch pt-10 lg:flex-row lg:items-start">
                         <!-- icon -->
                         <div
-                            class="flex flex-row justify-center items-start p-[14px] gap-[10px] w-[60px] h-[60px] bg-bg-icon rounded-md lg:w-[100px] lg:justify-start">
+                            class="flex flex-row justify-center items-start p-[14px] gap-[10px] w-[60px] h-[60px] bg-bg-icon rounded-md lg:w-[100px] lg:justify-start dark:bg-slate-700">
                             <figure>
                                 <img src="./asset/icon/image 11.svg" alt="icon" />
                             </figure>
@@ -416,10 +432,12 @@
                         <!-- deskripsi -->
                         <div
                             class="flex flex-col items-center gap-[10px] h-auto order-1 flex-grow text-center lg:items-start lg:text-left">
-                            <h1 class="font-main font-medium text-lg text-black">
+                            <h1 class="font-main font-medium text-lg text-black dark:text-white
+                            ">
                                 Pokoknya Males Aja Lah
                             </h1>
-                            <p class="font-header font-normal text-base text-[#0c1b4d] opacity-60 order-4 lg:pr-8">
+                            <p
+                                class="font-header font-normal text-base text-secondary opacity-60 order-4 lg:pr-8  dark:text-primary2">
                                 Nggak tau lagi harus ngomong apa, pokoknya males aja sih kita
                                 bikin aplikasi chat kek gini. Makannya mending lo pake
                                 WhatsApp aja udah.
@@ -430,20 +448,21 @@
             </div>
             <!-- about section -->
             <div class="px-10 md:px-20 md:pt-[10rem]" id="about">
-                <figure class="group cursor-pointer mt-[30rem] md:flex bg-bg-icon rounded-xl p-8 md:p-0 md:m-0">
-                    <img src="./asset/image (1).png" alt="profil" width="384" height="512"
-                        class="w-24 h-24 blur-lg border border-slate-300 shadow shadow-slate-300 transition-all ease-in-out duration-500 group-hover:blur-0 md:w-48 md:h-auto rounded-full mx-auto md:rounded-none" />
+                <figure
+                    class="group cursor-pointer mt-[30rem] md:flex bg-bg-icon rounded-xl p-8 md:p-0 md:m-0 dark:bg-slate-800 dark:opacity-90">
+                    <img src="./asset/image (1).png" alt="profil" width="384" height="512" class="w-24 h-24 blur-lg border border-slate-300 shadow shadow-slate-300 transition-all ease-in-out duration-500 group-hover:blur-0 md:w-48 md:h-auto rounded-full mx-auto md:rounded-none
+                                dark:border-0 dark:border-slate-800 " />
                     <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
                         <blockquote>
-                            <p class="font-main font-medium text-lg text-secondary">
+                            <p class="font-main font-medium text-lg text-secondary dark:text-white">
                                 “Tailwind CSS is the only framework that I've seen scale on
                                 large teams. It’s easy to customize, adapts to any design, and
                                 the build size is tiny.”
                             </p>
                         </blockquote>
                         <figcaption class="font-header">
-                            <div class="text-primary font-semibold">Dimas Okr</div>
-                            <div class="text-secondary opacity-60 font-normal">
+                            <div class="text-primary font-semibold dark:text-primary2hover">Dimas Okr</div>
+                            <div class="text-secondary opacity-60 font-normal dark:text-primary2">
                                 Calon.....
                             </div>
                         </figcaption>
@@ -454,16 +473,16 @@
             <div class="py-[6.25rem]"></div>
             <div class="flex flex-col justify-center items-center py-[6.25rem]" id="faq">
                 <!-- deskripsi -->
-                <h1 class="font-header font-semibold text-sm tracking-widest text-center text-secondary] opacity-100">
+                <h1
+                    class="font-header font-semibold text-sm tracking-widest text-center text-secondary opacity-100 dark:text-primary2hover">
                     BANYAK YANG NANYA
                 </h1>
-
                 <h2
-                    class="font-main font-normal text-[28px] leading-[42px] text-center text-secondary opacity-100 order-2 py-3">
+                    class="font-main font-normal text-[28px] leading-[42px] text-center text-secondary opacity-100 order-2 py-3 dark:text-white">
                     Pertanyaan Yang Sering Ditanyain
                 </h2>
-
-                <p class="font-header font-normal text-base text-center text-accordion order-4 lg:px-64">
+                <p
+                    class="font-header font-normal text-base text-center text-accordion order-4 lg:px-64 dark:text-primary2">
                     Sebenernya pertanyaan-pertanyaan ini kagak ada yang nanya sih, tapi
                     ya ditaruh sini aja siapa tau lo mau baca ‘kan.
                 </p>
@@ -473,45 +492,49 @@
                 <div
                     class="max-w-xs flex flex-col items-center p-0 gap-[15px] h-[41.438rem] order-6 lg:items-start lg:max-w-lg">
                     <div>
-                        <details class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md " open>
-                            <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
-                        
+                        <!-- one -->
+                        <details
+                            class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md dark:open:bg-slate-700 dark:open:shadow-slate-700"
+                            open>
+                            <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon        
                             rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
-                            ">
-                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg">
+                            dark:group-open:border-slate-600 dark:border-slate-700 ">
+                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg dark:text-white">
                                     Apakah aplikasi ini sudah dapat izin dari MUI?
                                 </h3>
+                                <!-- arrow icon -->
                                 <div class="flex w-10 items-center justify-center lg:group-open:pt-8">
-                                    <div
-                                        class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
-                                    -translate-y-2 rotate-[135deg]
-                                     border-dark group-open:-rotate-[45deg]  group-open:border-white transition-transform origin-left">
+                                    <div class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid -translate-y-2 rotate-[135deg]
+                                              border-dark group-open:-rotate-[45deg] group-open:border-white transition-transform origin-left
+                                                dark:border-white dark:group-open:border-slate-300">
                                     </div>
                                 </div>
                             </summary>
-                            <div class="p-4 group-open:text-white">
+                            <div class="p-4 group-open:text-white dark:group-open:text-primary2">
                                 <p class="font-header font-normal text-base">
                                     Aplikasi kok harus dapat izin Mui,situ aplikasi atau makanan:v
                                 </p>
                             </div>
                         </details>
-
-                        <details class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md ">
+                        <!-- two -->
+                        <details
+                            class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md dark:open:bg-slate-700 dark:open:shadow-slate-700">
                             <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
-                                                    rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
-                                                    ">
-                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg">
+                                            rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
+                                            dark:group-open:border-slate-600 dark:border-slate-700 ">
+                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg dark:text-white">
                                     Apakah data saya akan dijual ke agen khusus US?
                                 </h3>
+                                <!-- arrow icon -->
                                 <div class="flex w-10 items-center justify-center lg:group-open:pt-8">
-                                    <div
-                                        class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
-                                                            -translate-y-2 rotate-[135deg]
-                                                             border-dark group-open:-rotate-[45deg] group-open:border-white transition-transform origin-left">
+                                    <div class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
+                                                -translate-y-2 rotate-[135deg] border-dark group-open:-rotate-[45deg] 
+                                                group-open:border-white transition-transform origin-left
+                                                dark:border-white dark:group-open:border-slate-300">
                                     </div>
                                 </div>
                             </summary>
-                            <div class="p-4 group-open:text-white">
+                            <div class="p-4 group-open:text-white dark:group-open:text-primary2">
                                 <p class="font-header font-normal text-base">
                                     Ya jelas dong, kalau ngga di jual dapet duit darimana. Lo kalo nanya yang bener
                                     dong.
@@ -520,22 +543,25 @@
                                 </p>
                             </div>
                         </details>
-                        <details class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md ">
+                        <!-- three -->
+                        <details
+                            class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md dark:open:bg-slate-700 dark:open:shadow-slate-700">
                             <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
-                                                                            rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
-                                                                            ">
-                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg">
+                                            rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
+                                            dark:group-open:border-slate-600 dark:border-slate-700 ">
+                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg dark:text-white">
                                     Apakah data saya akan dijual ke agen khusus US?
                                 </h3>
+                                <!-- arrow icon -->
                                 <div class="flex w-10 items-center justify-center lg:group-open:pt-8">
-                                    <div
-                                        class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
-                                                                                    -translate-y-2 rotate-[135deg]
-                                                                                     border-dark group-open:-rotate-[45deg] group-open:border-white transition-transform origin-left">
+                                    <div class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
+                                                -translate-y-2 rotate-[135deg] border-dark group-open:-rotate-[45deg] 
+                                                group-open:border-white transition-transform origin-left
+                                                dark:border-white dark:group-open:border-slate-300">
                                     </div>
                                 </div>
                             </summary>
-                            <div class="p-4 group-open:text-white">
+                            <div class="p-4 group-open:text-white dark:group-open:text-primary2">
                                 <p class="font-header font-normal text-base">
                                     Ya jelas dong, kalau ngga di jual dapet duit darimana. Lo kalo nanya yang bener
                                     dong.
@@ -544,22 +570,27 @@
                                 </p>
                             </div>
                         </details>
-                        <details class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md ">
-                            <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon                                              
-                                                                            rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
-                                                                            ">
-                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg">
+                        <!-- four -->
+                        <details
+                            class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md dark:open:bg-slate-700 dark:open:shadow-slate-700">
+                            <summary
+                                class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
+                                                                    rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
+                                                                    dark:group-open:border-slate-600 dark:border-slate-700 ">
+                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg dark:text-white">
                                     Apakah data saya akan dijual ke agen khusus US?
                                 </h3>
+                                <!-- arrow icon -->
                                 <div class="flex w-10 items-center justify-center lg:group-open:pt-8">
                                     <div
                                         class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
-                                                                                    -translate-y-2 rotate-[135deg]
-                                                                                     border-dark group-open:-rotate-[45deg] group-open:border-white transition-transform origin-left">
+                                                                        -translate-y-2 rotate-[135deg] border-dark group-open:-rotate-[45deg] 
+                                                                        group-open:border-white transition-transform origin-left
+                                                                        dark:border-white dark:group-open:border-slate-300">
                                     </div>
                                 </div>
                             </summary>
-                            <div class="p-4 group-open:text-white">
+                            <div class="p-4 group-open:text-white dark:group-open:text-primary2">
                                 <p class="font-header font-normal text-base">
                                     Ya jelas dong, kalau ngga di jual dapet duit darimana. Lo kalo nanya yang bener
                                     dong.
@@ -568,22 +599,27 @@
                                 </p>
                             </div>
                         </details>
-                        <details class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md ">
-                            <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
-                                                                            rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
-                                                                            ">
-                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg">
+                        <!-- five -->
+                        <details
+                            class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md dark:open:bg-slate-700 dark:open:shadow-slate-700">
+                            <summary
+                                class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
+                                                                                                rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
+                                                                                                dark:group-open:border-slate-600 dark:border-slate-700 ">
+                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg dark:text-white">
                                     Apakah data saya akan dijual ke agen khusus US?
                                 </h3>
+                                <!-- arrow icon -->
                                 <div class="flex w-10 items-center justify-center lg:group-open:pt-8">
                                     <div
                                         class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
-                                                                                    -translate-y-2 rotate-[135deg]
-                                                                                     border-dark group-open:-rotate-[45deg] group-open:border-white transition-transform origin-left">
+                                                                                                    -translate-y-2 rotate-[135deg] border-dark group-open:-rotate-[45deg] 
+                                                                                                    group-open:border-white transition-transform origin-left
+                                                                                                    dark:border-white dark:group-open:border-slate-300">
                                     </div>
                                 </div>
                             </summary>
-                            <div class="p-4 group-open:text-white">
+                            <div class="p-4 group-open:text-white dark:group-open:text-primary2">
                                 <p class="font-header font-normal text-base">
                                     Ya jelas dong, kalau ngga di jual dapet duit darimana. Lo kalo nanya yang bener
                                     dong.
@@ -592,22 +628,27 @@
                                 </p>
                             </div>
                         </details>
-                        <details class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md ">
-                            <summary class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
-                                                                            rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
-                                                                            ">
-                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg">
+                        <!-- six -->
+                        <details
+                            class="group open:bg-primary open:shadow open:shadow-primary open:rounded-md dark:open:bg-slate-700 dark:open:shadow-slate-700">
+                            <summary
+                                class="list-none flex flex-wrap items-center cursor-pointer border-b border-bg-icon
+                                                                        rounded group-open:border-b group-open:text-white group-open:border-[#ffffff1a] group-open:z-[1] relative
+                                                                        dark:group-open:border-slate-600 dark:border-slate-700 ">
+                                <h3 class="flex flex-1 p-4 font-main font-medium text-lg dark:text-white">
                                     Apakah data saya akan dijual ke agen khusus US?
                                 </h3>
+                                <!-- arrow icon -->
                                 <div class="flex w-10 items-center justify-center lg:group-open:pt-8">
                                     <div
                                         class="w-4 h-4 border-t-2 border-r-2 border-b-0 border-solid 
-                                                                                    -translate-y-2 rotate-[135deg]
-                                                                                     border-dark group-open:-rotate-[45deg] group-open:border-white transition-transform origin-left">
+                                                                            -translate-y-2 rotate-[135deg] border-dark group-open:-rotate-[45deg] 
+                                                                            group-open:border-white transition-transform origin-left
+                                                                            dark:border-white dark:group-open:border-slate-300">
                                     </div>
                                 </div>
                             </summary>
-                            <div class="p-4 group-open:text-white">
+                            <div class="p-4 group-open:text-white dark:group-open:text-primary2">
                                 <p class="font-header font-normal text-base">
                                     Ya jelas dong, kalau ngga di jual dapet duit darimana. Lo kalo nanya yang bener
                                     dong.
@@ -622,8 +663,9 @@
                 </div>
             </div>
             <div class="py-[6.25rem]"></div>
+            <!-- footer section -->
             <div
-                class="flex flex-col items-start p-20 gap-[30px] bg-footer rounded-tl-3xl rounded-tr-3xl dark:bg-slate-700">
+                class="flex flex-col items-start p-20 gap-[30px] bg-footer rounded-tl-3xl rounded-tr-3xl dark:bg-slate-800">
                 <div class="flex flex-col items-start gap-[30px] lg:flex-row">
                     <div class="flex flex-col items-start gap-5 lg:w-[27rem] lg:gap-2">
                         <div class="flex flex-row items-center gap-[10px]">
@@ -693,8 +735,9 @@
                             <div
                                 class="group flex flex-row justify-center items-center p-2 gap-[10px] w-10 h-10 bg-bg-icon rounded-md cursor-pointer transition-all duration-1000">
                                 <a href="https://www.instagram.com/dimas_okr/?hl=id" target="_blank">
-                                    <svg class="group-hover:fill-white" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="group-hover:fill-white dark:fill-primary2 dark:group-hover:fill-slate-400"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
                                             stroke="#0C1B4D" stroke-width="2" stroke-linecap="round"
@@ -712,8 +755,9 @@
                             <div
                                 class="group flex flex-row justify-center items-center p-2 gap-[10px] w-10 h-10 bg-bg-icon rounded-md transition-all duration-1000 cursor-pointer">
                                 <a href="https://www.facebook.com/dimas.oktavian.5055" target="_blank">
-                                    <svg class="group-hover:fill-white" width="24" height="24" viewBox="0 0 24 31"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="group-hover:fill-white  dark:fill-primary2 dark:group-hover:fill-slate-400"
+                                        width="24" height="24" viewBox="0 0 24 31" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <g filter="url(#filter0_d_27_427)">
                                             <path
                                                 d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
@@ -746,7 +790,8 @@
                                 class="group flex flex-row justify-center items-center p-2 gap-[10px] w-10 h-10 bg-bg-icon rounded-md transition-all duration-1000 cursor-pointer">
                                 <a href="https://github.com/Dimas-oktavian17" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                        class="bi bi-github group-hover:fill-white" viewBox="0 0 16 16">
+                                        class="bi bi-github group-hover:fill-white  dark:fill-primary2 dark:group-hover:fill-slate-400"
+                                        viewBox="0 0 16 16">
                                         <path
                                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                     </svg>
