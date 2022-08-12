@@ -5,7 +5,6 @@
 onload = function () {
   const id = document.getElementById("bounce");
   let loading = document.getElementById("loading");
-  let form = document.getElementById("form");
 
   let loaded = setInterval(() => {
     loading.classList.add("animate-bounce");
@@ -16,8 +15,8 @@ onload = function () {
     clearInterval(loaded);
     loading.classList.add("hidden");
     id.classList.remove("h-screen");
-    form.classList.remove("invisible");
-    form_login.classList.add("h-screen");
+    // form.classList.remove("invisible");
+    form_login.classList.remove("hidden-me");
     // body.classList.remove("overflow-hidden");
   }, 5000);
 };
@@ -30,71 +29,59 @@ let nav = document.getElementById("nav");
 let loading = document.getElementById("loading");
 let body = document.getElementById("body");
 const id = document.getElementById("bounce");
-let admin = document.getElementById("admin");
-let basic = document.getElementById("basic");
 let main = document.querySelector("#main");
-// logoutButton.style.display = "none";
+let header = document.getElementById("beranda");
 
 function onLogin() {
   localStorage.setItem("username", usernameInput.value);
-  // logoutButton.style.display = "block";
+
   if (usernameInput.value == "admin" && passwordInput.value == "admin123") {
     localStorage.setItem("role", "admin");
-    swal("Good job!", "Successful to login!", "success");
+
     form.classList.add("invisible");
     form_login.classList.remove("h-screen");
-    nav.classList.remove("invisible");
-    main.classList.remove("invisible");
+    header.classList.remove("hidden-me");
+    main.classList.remove("hidden-me");
   } else {
     // form.style.display = "block";
-    form.classList.remove("invisible");
+    // swal("Oops", "Something went wrong!", "error");
+    alert("salah");
     localStorage.setItem("role", "basic");
   }
 }
 
 if (localStorage.getItem("username")) {
-  // form.style.display = "none";
-  // logoutButton.style.display = "block";
-
   if (localStorage.getItem("role") == "admin") {
     form_login.classList.remove("h-screen");
     form_login.classList.add("h-0");
-    form_login.classList.add("invisible");
-    // form.classList.add("invisible");
-    nav.classList.remove("invisible");
-    main.classList.remove("invisible");
-    // form.classList.add("invisible");
-    // nav.classList.remove("invisible");
-    // let loaded = setInterval(() => {
-    //   loading.classList.add("animate-bounce");
-    // }, 100);
+    form_login.classList.add("hidden-me");
 
-    // setTimeout(() => {
-    //   clearInterval(loaded);
-    //   loading.classList.add("hidden");
-    //   id.classList.remove("h-screen");
-    //   form_login.classList.remove("h-screen");
-    //   // form.classList.remove("invisible");
-    //   nav.classList.remove("invisible");
-    // }, 1000);
+    header.classList.remove("hidden-me");
+    main.classList.remove("hidden-me");
+
     onload = function () {
       const id = document.getElementById("bounce");
       let loading = document.getElementById("loading");
       let form = document.getElementById("form");
 
       let loaded = setInterval(() => {
-        loading.classList.remove("animate-bounce");
-        form_login.classList.remove("h-screen");
-      }, 0);
+        loading.classList.add("animate-bounce");
+        main.classList.add("hidden-me");
+        header.classList.remove("container");
+      }, 500);
 
       setTimeout(() => {
         clearInterval(loaded);
+        main.classList.add("pt-8");
+        main.classList.remove("hidden-me");
+        header.classList.remove("hidden-me");
+        header.classList.add("container");
         loading.classList.add("hidden");
         id.classList.remove("h-screen");
         form.classList.remove("invisible");
         form_login.classList.add("h-screen");
         body.classList.remove("overflow-hidden");
-      }, 0);
+      }, 3000);
     };
   } else {
     admin.style.display = "none";
@@ -103,6 +90,7 @@ if (localStorage.getItem("username")) {
   }
 
   function onLogout() {
+    header.classList.remove("container");
     localStorage.clear();
     location.reload();
   }
