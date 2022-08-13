@@ -16,9 +16,10 @@
     @apply max-w-5xl mx-auto py-8;
   }
 }
+/* this */
 @layer components {
   .active > div > p:nth-child(1) {
-    @apply rotate-45 origin-bottom-left bg-primary;
+    @apply rotate-45 origin-bottom-left bg-primary dark:bg-primary2hover;
   }
 }
 @layer components {
@@ -26,9 +27,10 @@
     @apply scale-0;
   }
 }
+/* this */
 @layer components {
   .active > div > p:nth-child(3) {
-    @apply -rotate-[45deg] origin-top-left w-[30px] bg-primary;
+    @apply -rotate-[45deg] origin-top-left w-[30px] bg-primary dark:bg-primary2hover;
   }
 }
 @layer components {
