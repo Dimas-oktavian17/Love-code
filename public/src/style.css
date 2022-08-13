@@ -2563,4 +2563,8 @@ input[type="range"]::-ms-fill-lower {
   .dark .lg\:dark\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
+
+  .dark .dark\:lg\:hover\:bg-transparent:hover {
+    background-color: transparent;
+  }
 }
