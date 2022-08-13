@@ -20,7 +20,7 @@
 
     <!-- Javascript Eksternal & librayJS -->
     <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
-    <link rel="stylesheet" href="../node_modules/aos/dist/aos.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="box-border overflow-hidden bg-Theme dark:bg-slate-800" id="body">
@@ -796,10 +796,13 @@
         </div>
     </main>
     <!-- script in bottom,in top not responding:( ) -->
-    <script src="../node_modules/aos/dist/aos.js" type="text/javascript"></script>
-    <script src="./src/aos.js" type="text/javascript"></script>
+
     <script src="../node_modules/flowbite/dist/flowbite.js" type="text/javascript"></script>
     <script src="./src/index.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
