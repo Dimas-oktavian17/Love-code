@@ -2554,4 +2554,13 @@ input[type="range"]::-ms-fill-lower {
   .dark .lg\:dark\:bg-transparent {
     background-color: transparent;
   }
+
+  .dark .lg\:dark\:hover\:bg-slate-600:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+  }
+
+  .dark .lg\:dark\:hover\:bg-transparent:hover {
+    background-color: transparent;
+  }
 }
