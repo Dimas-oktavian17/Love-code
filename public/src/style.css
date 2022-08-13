@@ -686,10 +686,6 @@ input[type="range"]::-ms-fill-lower {
   background: #3F83F8;
 }
 
-.tooltip.invisible > .tooltip-arrow:before {
-  visibility: hidden;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -910,10 +906,6 @@ input[type="range"]::-ms-fill-lower {
 
 .pointer-events-none {
   pointer-events: none;
-}
-
-.invisible {
-  visibility: hidden;
 }
 
 .fixed {
@@ -1232,6 +1224,22 @@ input[type="range"]::-ms-fill-lower {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.scroll-mt-28 {
+  scroll-margin-top: 7rem;
+}
+
+.scroll-mt-36 {
+  scroll-margin-top: 9rem;
+}
+
+.scroll-mt-10 {
+  scroll-margin-top: 2.5rem;
+}
+
+.scroll-mt-32 {
+  scroll-margin-top: 8rem;
 }
 
 .list-none {
@@ -1584,6 +1592,10 @@ input[type="range"]::-ms-fill-lower {
   padding-top: 6.25rem;
 }
 
+.pt-16 {
+  padding-top: 4rem;
+}
+
 .pb-\[6\.25rem\] {
   padding-bottom: 6.25rem;
 }
@@ -1602,10 +1614,6 @@ input[type="range"]::-ms-fill-lower {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-16 {
-  padding-top: 4rem;
 }
 
 .text-center {
