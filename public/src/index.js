@@ -28,7 +28,7 @@ let header = document.getElementById("beranda");
 function onLogin() {
   localStorage.setItem("username", usernameInput.value);
 
-  if (usernameInput.value == "admin" && passwordInput.value == "admin123") {
+  if (usernameInput.value == "myLisa" && passwordInput.value == "myLisa123") {
     localStorage.setItem("role", "admin");
     form_login.classList.remove("h-screen");
     header.classList.remove("hidden-me");
