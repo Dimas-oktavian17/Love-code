@@ -86,22 +86,22 @@ const Input = () => <StyledInput hasBorder />
 
 ## How it works
 
-When babel runs over your javascript or typescript files at compile time, twin grabs your classes and converts them into css objects.
-These css objects are then passed into your chosen css-in-js library without the need for an extra client-side bundle:
+You should run `npx tailwindcss -i ./public/src/input.css -o ./public/src/style.css --watch` or `npm run Dev` if you want to run TailwindCss with `npm run Dev`. you have to set the script package.json section to be like this
+`
+"scripts": {
+     "Dev": "npx tailwindcss -i ./public/src/input.css -o ./public/src/style.css --watch"
+   }
+`:
 
 ```js
-import tw from 'twin.macro'
 
-tw`text-sm md:text-lg`
+Simple Example
+class=`text-sm md:text-lg`
 
 // ↓ ↓ ↓ ↓ ↓ ↓
 
-{
-  fontSize: '0.875rem',
-  '@media (min-width: 768px)': {
-    fontSize: '1.125rem',
-  },
-}
+<div class="flex flex-col justify-center items-center py-[6.25rem] gap-[10px]">             
+            </div>
 ```
 
 ## Features
