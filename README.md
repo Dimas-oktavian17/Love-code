@@ -106,67 +106,127 @@ class=`text-sm md:text-lg`
 
 ## Features
 
-**👌 Simple imports** - Twin collapses imports from common styling libraries into a single import:
-
-```diff
-- import styled from '@emotion/styled'
-- import css from '@emotion/react'
-- import tw from 'twin.macro'
-+ import tw, { styled, css } from 'twin.macro'
-```
-
-**🐹 Adds no size to your build** - Twin converts the classes you’ve used into css objects using Babel and then compiles away, leaving no runtime code
-
-**🍱 Apply variants to multiple classes at once with variant groups**
+**👌 Login & Logout** - Login & Logout feature, very simple to use local storage and only accommodates one account:
 
 ```js
-import 'twin.macro'
+  function onLogin() {
+  localStorage.setItem("username", usernameInput.value);
 
-const interactionStyles = () => (
-  <div tw="hover:(text-black underline) focus:(text-blue-500 underline)" />
-)
+  if (usernameInput.value == "myLisa" && passwordInput.value == "myLisa123") {
+    localStorage.setItem("role", "admin");
+    form_login.classList.remove("h-screen");
+    header.classList.remove("hidden-me");
+    main.classList.remove("hidden-me");
+  } else {
+    alert("salah");
+    localStorage.setItem("role", "basic");
+  }
+}
 
-const mediaStyles = () => <div tw="sm:(w-4 mt-3) lg:(w-8 mt-6)" />
+if (localStorage.getItem("username")) {
+  if (localStorage.getItem("role") == "admin") {
+    form_login.classList.remove("h-screen");
+    form_login.classList.add("h-0");
+    form_login.classList.add("hidden-me");
+    header.classList.remove("hidden-me");
+    main.classList.remove("hidden-me");
 
-const pseudoElementStyles = () => <div tw="before:(block w-10 h-10 bg-black)" />
+    onload = function () {
+      const id = document.getElementById("bounce");
+      let loading = document.getElementById("loading");
 
-const stackedVariants = () => <div tw="sm:hover:(bg-black text-white)" />
+      let loaded = setInterval(() => {
+        loading.classList.add("animate-bounce");
+        main.classList.add("hidden-me");
+        header.classList.remove("container");
+      }, 500);
 
-const groupsInGroups = () => <div tw="sm:(bg-black hover:(bg-white w-10))" />
+      setTimeout(() => {
+        clearInterval(loaded);
+        main.classList.add("pt-8");
+        main.classList.remove("hidden-me");
+        header.classList.remove("hidden-me");
+        header.classList.add("container");
+        loading.classList.add("hidden");
+        id.classList.remove("h-screen");
+        form_login.classList.add("h-screen");
+        body.classList.remove("overflow-hidden");
+      }, 3000);
+    };
+  } else {
+    form_login.classList.remove("hidden-me");
+  }
+
+  function onLogout() {
+    header.classList.remove("container");
+    localStorage.clear();
+    location.reload();
+  }
+}
 ```
 
-**🛎 Helpful suggestions for mistypings** - Twin chimes in with class and variant values from your Tailwind config:
+**🐹 Bounce animation** - A loading animation, when you login or logout. The bounce animation will always appear for a few seconds and will disappear after a while.
 
-```bash
-✕ ml-1.25 was not found
-
-Try one of these classes:
-
-- ml-1.5 > 0.375rem
-- ml-1 > 0.25rem
-- ml-10 > 2.5rem
-- ml-11 > 2.75rem
-- ml-12 > 3rem
-```
-
-**🖌️ Use the theme import to add values from your tailwind config**
+**🍱 Bounce animation dibuat dengan `Setinterval` & `SetTimeout`**
 
 ```js
-import { css, theme } from 'twin.macro'
 
-const Input = () => <input css={css({ color: theme`colors.purple.500` })} />
+onload = function () {
+  const id = document.getElementById("bounce");
+  let loading = document.getElementById("loading");
+
+  let loaded = setInterval(() => {
+    loading.classList.add("animate-bounce");
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(loaded);
+    loading.classList.add("hidden");
+    id.classList.remove("h-screen");
+    form_login.classList.remove("hidden-me");
+    body.classList.remove("overflow-hidden");
+  }, 5000);
+};
+
 ```
 
-See more examples [using the theme import →](https://github.com/ben-rogerson/twin.macro/pull/106)
-
-**💡 Works with the official tailwind vscode plugin** - Avoid having to look up your classes with auto-completions straight from your Tailwind config - [setup instructions →](https://github.com/ben-rogerson/twin.macro/discussions/227)
-
-**💥 Add !important to any class with a trailing or leading bang!**
+**💥 `tailwind.config.js` Structure!**
 
 ```js
-<div tw="hidden!" /> || <div tw="!hidden" />
+
 // ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-<div css={{ "display": "none !important" }} />
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./public/**/*.{html,js}"],
+  // content: ["./node_modules/flowbite/**/*.js"],
+  theme: {
+    fontFamily: {
+      header: ["Source Sans Pro", "sans-serif"],
+      main: ["DM Sans", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        primary: "#4A72FF",
+        primary2: "#e9eeff",
+        primarySponsor: "#ebefff",
+        primary2hover: "#dae0f7",
+        secondary: "#0C1B4D",
+        secondary2: "#F4F7FF",
+        secondary3: "#657094",
+        Theme: "#eef2ff",
+        btnDark: "rgba(51, 65, 85, 0.3)",
+        donwlod: "rgba(74, 114, 255, 0.25)",
+        "bg-icon": "rgba(12, 27, 77, 0.1)",
+        dark: "rgba(12, 27, 77, 1)",
+        accordion: "rgba(12, 27, 77, 0.6)",
+        footer: "rgba(74, 114, 255, 0.05)",
+        darkFooter: "rgba(30, 41, 59, .3)",
+      },
+    },
+  },
+  plugins: [require("flowbite/plugin")],
+};
+
 ```
 
 Add !important to multiple classes with bracket groups:
