@@ -230,4 +230,4 @@ Twin works within many modern stacks - take a look at these examples to get star
 
 ## Special thanks
 
-This project stemmed from [babel-plugin-tailwind-components](https://github.com/bradlc/babel-plugin-tailwind-components) so a big shout out goes to [Brad Cornes](https://github.com/bradlc) for the amazing work he produced. Styling with tailwind.macro has been such a pleasure.
+This project stemmed from [Array ID](https://www.figma.com/@mhd) so a big shout out goes to [Muhamad Nauval Azhar(https://www.figma.com/community/file/1061306005803309728 ) for the amazing work he produced. Thank you very much for reading my documentation to the end.
