@@ -10,48 +10,36 @@
 
 ---
 
-Style jsx elements using Tailwind v3 classes:
-
-```js
-import 'twin.macro'
-
-const Input = () => <input tw="border hover:border-black" />
-```
-
-Nest Twin’s `tw` import within a css prop to add conditional styles:
-
-```js
-import tw from 'twin.macro'
-
-const Input = ({ hasHover }) => (
-  <input css={[tw`border`, hasHover && tw`hover:border-black`]} />
-)
-```
-
-Or mix sass styles with the css import:
-
-```js
-import tw, { css } from 'twin.macro'
-
-const hoverStyles = css`
-  &:hover {
-    border-color: black;
-    ${tw`text-black`}
-  }
-`
-const Input = ({ hasHover }) => (
-  <input css={[tw`border`, hasHover && hoverStyles]} />
-)
-```
-
 ### Styled Components
 
-You can also use the tw import to create and style new components:
+You can use A utility-first CSS or Component TailwindCss:
 
 ```js
-import tw from 'twin.macro'
 
-const Input = tw.input`border hover:border-black`
+Example
+
+@layer components {
+  .container {
+    @apply max-w-5xl mx-auto py-8;
+  }
+}
+/* this */
+@layer components {
+  .active > div > p:nth-child(1) {
+    @apply rotate-45 origin-bottom-left bg-primary dark:bg-primary2hover;
+  }
+}
+@layer components {
+  .active > div > p:nth-child(2) {
+    @apply scale-0;
+  }
+}
+/* this */
+@layer components {
+  .active > div > p:nth-child(3) {
+    @apply -rotate-[45deg] origin-top-left w-[30px] bg-primary dark:bg-primary2hover;
+  }
+}
 ```
 
 And clone and style existing components:
@@ -278,9 +266,9 @@ Twin works within many modern stacks - take a look at these examples to get star
 
 ## Resources
 
-- 🔥 [Docs: The prop styling guide](https://github.com/ben-rogerson/twin.macro/blob/master/docs/prop-styling-guide.md) - A must-read guide to level up on prop styling
-- 🔥 [Docs: The styled component guide](https://github.com/ben-rogerson/twin.macro/blob/master/docs/styled-component-guide.md) - A must-read guide on getting productive with styled components
-- [Docs: Options](https://github.com/ben-rogerson/twin.macro/blob/master/docs/options.md) - Learn about the features you can tweak via the twin config
+- 🔥 [Docs: TailwindCss Guide](https://tailwindcss.com/docs/installation) - A must-read guide to styling your website
+- 🔥 [Design: Figma Design](https://www.figma.com/community/file/1061306005803309728) - A must-have design figma for the slicing design process
+- [Docs: Prettier](https://prettier.io/docs/en/options.html) - Learn the extension formatter that keeps code organized
 - [Plugin: babel-plugin-twin](https://github.com/ben-rogerson/babel-plugin-twin) - Use the tw and css props without adding an import
 - [Example: Advanced theming](https://github.com/ben-rogerson/twin.macro/blob/master/docs/advanced-theming.md) - Add custom theming the right way using css variables
 - [Example: React + Tailwind breakpoint syncing](https://gist.github.com/ben-rogerson/b4b406dffcc18ae02f8a6c8c97bb58a8) - Sync your tailwind.config.js breakpoints with react
