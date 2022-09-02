@@ -42,36 +42,6 @@ Example
 }
 ```
 
-And clone and style existing components:
-
-```js
-const PurpleInput = tw(Input)`border-purple-500`
-```
-
-Switch to the styled import to add conditional styling:
-
-```js
-import tw, { styled } from 'twin.macro'
-
-const StyledInput = styled.input(({ hasBorder }) => [
-  `color: black;`,
-  hasBorder && tw`border-purple-500`,
-])
-const Input = () => <StyledInput hasBorder />
-```
-
-Or use backticks to mix with sass styles:
-
-```js
-import tw, { styled } from 'twin.macro'
-
-const StyledInput = styled.input`
-  color: black;
-  ${({ hasBorder }) => hasBorder && tw`border-purple-500`}
-`
-const Input = () => <StyledInput hasBorder />
-```
-
 ## How it works
 
 You should run `npx tailwindcss -i ./public/src/input.css -o ./public/src/style.css --watch` or `npm run Dev` if you want to run TailwindCss with `npm run Dev`. you have to set the script package.json section to be like this
@@ -217,25 +187,15 @@ module.exports = {
 
 ```
 
-Add !important to multiple classes with bracket groups:
-
-```js
-<div tw="(hidden ml-auto)!" />
-// ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-<div css={{ "display": "none !important", "marginLeft": "auto !important" }} />
-```
-
 ## Get started
 
-Twin works within many modern stacks - take a look at these examples to get started:
+The first step you have to prepare - see the following examples to get started::
 
-<!-- ### App build tools and libraries -->
-<!-- - **Parcel**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/react-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/react-emotion) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/react-emotion-typescript)
-- **Webpack**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/webpack-styled-components-typescript) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/webpack-emotion-typescript)
-- **Preact**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/preact-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/preact-emotion) / [goober](https://github.com/ben-rogerson/twin.examples/tree/master/preact-goober)
-- **Create React App**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/cra-emotion)
-- **Vite**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/vite-styled-components-typescript) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/vite-emotion-typescript)
- -->
+ ### App build tools and libraries
+- **VsCode**<br/>[Code-Editor](https://code.visualstudio.com/download) 
+- **Git**<br/>[Version-Control-System](https://git-scm.com/downloads) 
+- **NodeJs**<br/>[JavaScript-Runtime](https://nodejs.org/en/)
+- **Figma**<br/>[design-Tools](https://www.figma.com/downloads/)
  
  ### Tech Stack
 
@@ -243,14 +203,9 @@ Twin works within many modern stacks - take a look at these examples to get star
 - **Css**<br/>A stylesheet language / [Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - **Javascript**<br/>A scripting language / [Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-
- 
 ### Advanced frameworks
 
 - **TailwindCss**<br/>[A utility-first CSS framework](https://tailwindcss.com/docs/installation) / [Documentation](https://github.com/tailwindlabs/tailwindcss.git)
-<!-- - **Next.js**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion-typescript) / [stitches (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/next-stitches-typescript)
-- **Blitz.js**<br/>[emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/blitz-emotion-typescript)
-- **Laravel**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/laravel-styled-components-typescript) -->
 
 ### Component libraries
 
@@ -258,23 +213,19 @@ Twin works within many modern stacks - take a look at these examples to get star
 - **AnimateCss**<br/>[animation-css libraries](https://animate.style/) / [Documentation](https://github.com/animate-css/animate.css.git)
 - **Aos**<br/>[Animation-scroll-css libraries ](https://michalsnik.github.io/aos/) / [Documentation](https://github.com/michalsnik/aos.git)
 
-## Community
-
-[Drop into our Discord server](https://discord.gg/Xj6x9z7) for announcements, help and styling chat.
-
-<a href="https://discord.gg/Xj6x9z7"><img src="https://img.shields.io/discord/705884695400939552?label=discord&logo=discord" alt="Discord"></a>
-
 ## Resources
 
 - 🔥 [Docs: TailwindCss Guide](https://tailwindcss.com/docs/installation) - A must-read guide to styling your website
 - 🔥 [Design: Figma Design](https://www.figma.com/community/file/1061306005803309728) - A must-have design figma for the slicing design process
 - [Docs: Prettier](https://prettier.io/docs/en/options.html) - Learn the extension formatter that keeps code organized
+<!-- 
 - [Plugin: babel-plugin-twin](https://github.com/ben-rogerson/babel-plugin-twin) - Use the tw and css props without adding an import
 - [Example: Advanced theming](https://github.com/ben-rogerson/twin.macro/blob/master/docs/advanced-theming.md) - Add custom theming the right way using css variables
 - [Example: React + Tailwind breakpoint syncing](https://gist.github.com/ben-rogerson/b4b406dffcc18ae02f8a6c8c97bb58a8) - Sync your tailwind.config.js breakpoints with react
 - [Helpers: Twin VSCode snippets](https://gist.github.com/ben-rogerson/c6b62508e63b3e3146350f685df2ddc9) - For devs who want to type less
 - [Plugins: VSCode plugins](https://github.com/ben-rogerson/twin.macro/discussions/227) - VScode plugins that work with twin
 - [Article: "Why I Love Tailwind" by Max Stoiber](https://mxstbr.com/thoughts/tailwind) - Max (inventor of styled-components) shares his thoughts on twin
+ -->
 
 ## Special thanks
 
